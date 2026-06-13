@@ -17,7 +17,6 @@
         flex-direction: column;
       }
 
-      /* ── HEADER ── */
       header {
         display: flex;
         align-items: center;
@@ -27,16 +26,8 @@
         border-bottom: 1px solid #1e2d50;
       }
 
-      .logo {
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: #fff;
-        letter-spacing: 1px;
-      }
-
-      .logo span {
-        color: #3b82f6;
-      }
+      .logo { font-size: 1.6rem; font-weight: 700; color: #fff; letter-spacing: 1px; }
+      .logo span { color: #3b82f6; }
 
       .badge {
         background: #1e3a6e;
@@ -47,7 +38,6 @@
         font-weight: 600;
       }
 
-      /* ── HERO ── */
       .hero {
         flex: 1;
         display: flex;
@@ -76,10 +66,7 @@
         margin-bottom: 20px;
       }
 
-      .hero h1 em {
-        font-style: normal;
-        color: #3b82f6;
-      }
+      .hero h1 em { font-style: normal; color: #3b82f6; }
 
       .hero p {
         font-size: 1.05rem;
@@ -89,7 +76,6 @@
         margin-bottom: 48px;
       }
 
-      /* ── FEATURE CARDS ── */
       .cards {
         display: flex;
         gap: 16px;
@@ -109,40 +95,9 @@
       }
 
       .card:hover { border-color: #3b82f6; }
+      .card-icon { font-size: 1.8rem; margin-bottom: 10px; }
+      .card h3 { font-size: 0.85rem; font-weight: 600; color: #cbd5e1; line-height: 1.4; }
 
-      .card-icon {
-        font-size: 1.8rem;
-        margin-bottom: 10px;
-      }
-
-      .card h3 {
-        font-size: 0.85rem;
-        font-weight: 600;
-        color: #cbd5e1;
-        line-height: 1.4;
-      }
-
-      /* ── CTA BUTTON ── */
-      .cta-btn {
-        background: #3b82f6;
-        color: #fff;
-        border: none;
-        padding: 14px 36px;
-        border-radius: 8px;
-        font-size: 1rem;
-        font-family: 'Cairo', sans-serif;
-        font-weight: 700;
-        cursor: pointer;
-        transition: background 0.2s, transform 0.1s;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .cta-btn:hover { background: #2563eb; transform: translateY(-1px); }
-      .cta-btn:active { transform: translateY(0); }
-
-      /* ── DIVIDER ── */
       .divider {
         width: 60px;
         height: 3px;
@@ -151,9 +106,9 @@
         margin: 0 auto 40px;
       }
 
-      /* ── SAMPLE QUESTIONS ── */
+      /* Sample question pills — clickable */
       .samples {
-        margin-top: 20px;
+        margin-top: 28px;
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
@@ -167,12 +122,23 @@
         color: #93c5fd;
         font-size: 0.82rem;
         font-family: 'Cairo', sans-serif;
-        padding: 7px 14px;
+        padding: 8px 16px;
         border-radius: 20px;
-        cursor: default;
+        cursor: pointer;
+        transition: background 0.2s, border-color 0.2s;
       }
 
-      /* ── FOOTER ── */
+      .sample-q:hover {
+        background: #1e3a6e;
+        border-color: #3b82f6;
+      }
+
+      .hint {
+        margin-top: 12px;
+        font-size: 0.78rem;
+        color: #4b5563;
+      }
+
       footer {
         text-align: center;
         padding: 18px;
@@ -184,13 +150,11 @@
   </head>
   <body>
 
-    <!-- Header -->
     <header>
       <div class="logo">Cell<span>Tek</span></div>
       <span class="badge">🤖 AI Demo – نسخة تجريبية</span>
     </header>
 
-    <!-- Hero -->
     <section class="hero">
       <p class="hero-tag">مركز تجربة العملاء الذكي</p>
       <h1>مرحباً بك في<br /><em>المساعد الذكي</em> لـ CellTek</h1>
@@ -200,57 +164,72 @@
       </p>
 
       <div class="cards">
-        <div class="card">
-          <div class="card-icon">🏥</div>
-          <h3>مواعيد الفروع</h3>
-        </div>
-        <div class="card">
-          <div class="card-icon">🧲</div>
-          <h3>التحضير للفحوصات</h3>
-        </div>
-        <div class="card">
-          <div class="card-icon">🛡️</div>
-          <h3>التأمين الطبي</h3>
-        </div>
-        <div class="card">
-          <div class="card-icon">📅</div>
-          <h3>حجز المواعيد</h3>
-        </div>
+        <div class="card"><div class="card-icon">🏥</div><h3>مواعيد الفروع</h3></div>
+        <div class="card"><div class="card-icon">🧲</div><h3>التحضير للفحوصات</h3></div>
+        <div class="card"><div class="card-icon">🛡️</div><h3>التأمين الطبي</h3></div>
+        <div class="card"><div class="card-icon">📅</div><h3>حجز المواعيد</h3></div>
       </div>
 
       <div class="divider"></div>
 
-      <button class="cta-btn" onclick="document.querySelector('.cta-btn').innerText='💬 انقر على فقاعة الدردشة ↘'">
-        💬 ابدأ المحادثة الآن
-      </button>
+      <p style="color:#8b9cbd; font-size:0.95rem;">انقر على أي سؤال لإرساله مباشرةً ↓</p>
 
       <div class="samples">
-        <span class="sample-q">ما هي ساعات العمل؟</span>
-        <span class="sample-q">كيف أستعد للـ MRI؟</span>
-        <span class="sample-q">هل تقبلون AXA؟</span>
-        <span class="sample-q">What are your branch hours?</span>
-        <span class="sample-q">Do you accept insurance?</span>
+        <button class="sample-q" onclick="openWidget('ما هي ساعات العمل؟')">ما هي ساعات العمل؟</button>
+        <button class="sample-q" onclick="openWidget('كيف أستعد للـ MRI؟')">كيف أستعد للـ MRI؟</button>
+        <button class="sample-q" onclick="openWidget('هل تقبلون تأمين AXA؟')">هل تقبلون تأمين AXA؟</button>
+        <button class="sample-q" onclick="openWidget('What are your branch hours?')">What are your branch hours?</button>
+        <button class="sample-q" onclick="openWidget('Do you accept insurance?')">Do you accept insurance?</button>
+        <button class="sample-q" onclick="openWidget('How do I book an appointment?')">How do I book an appointment?</button>
       </div>
+
+      <p class="hint">💬 أو انقر على زر الدردشة في أسفل الصفحة لبدء محادثة حرة</p>
     </section>
 
-    <!-- Footer -->
     <footer>
       CellTek AI Demo &nbsp;|&nbsp; Powered by Vapi &nbsp;|&nbsp; للاستفسار: 16789
     </footer>
 
-    <!-- ── VAPI WIDGET ── -->
-    <script>
-      (function (w, d, s, o, f, js, fjs) {
-        w["VapiWidget"] = o;
-        w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments); };
-        js = d.createElement(s); fjs = d.getElementsByTagName(s)[0];
-        js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
-      })(window, document, "script", "vapiWidget", "https://cdn.jsdelivr.net/npm/vapi-web-widget@latest/dist/vapi-widget.js");
+    <!-- ✅ NEW Vapi Widget (updated CDN) -->
+    <script
+      src="https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js"
+      async
+      type="text/javascript">
+    </script>
 
-      vapiWidget("init", {
-        apiKey: "208b658d-a2d6-424d-a696-914d54432989",
-        assistantId: "4ab5933e-9427-4c0d-8fbe-45ec46287e89",
-      });
+    <vapi-widget
+      public-key="208b658d-a2d6-424d-a696-914d54432989"
+      assistant-id="4ab5933e-9427-4c0d-8fbe-45ec46287e89"
+      mode="chat"
+      theme="dark"
+      position="bottom-right"
+      size="full"
+      base-color="#0d1527"
+      accent-color="#3b82f6"
+      button-base-color="#3b82f6"
+      button-accent-color="#ffffff"
+      main-label="CellTek AI"
+      empty-chat-message="مرحباً! كيف أستطيع مساعدتك اليوم؟ / Hello! How can I help you today?"
+    ></vapi-widget>
+
+    <script>
+      // Opens the widget and sends a pre-filled question
+      function openWidget(question) {
+        const widget = document.querySelector('vapi-widget');
+        if (!widget) {
+          alert('Widget is still loading, please try again in a moment.');
+          return;
+        }
+        // Open the widget panel
+        widget.setAttribute('open', 'true');
+        // Small delay to let widget open before sending
+        setTimeout(() => {
+          widget.dispatchEvent(new CustomEvent('send-message', {
+            detail: { message: question },
+            bubbles: true
+          }));
+        }, 500);
+      }
     </script>
 
   </body>
