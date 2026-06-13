@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CellTek AI Assistant Demo</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h1>Welcome to CellTek</h1>
+    <p>Click the chat bubble to start a conversation with our AI assistant.</p>
+
+    <!-- Vapi Web Widget Script -->
+    <script>
+      (function (w, d, s, o, f, js, fjs) {
+        w["VapiWidget"] = o;
+        w[o] =
+          w[o] ||
+          function () {
+            (w[o].q = w[o].q || []).push(arguments);
+          };
+        js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+        js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
+      })(window, document, "script", "vapiWidget", "https://cdn.jsdelivr.net/npm/vapi-web-widget@latest/dist/vapi-widget.js");
+      vapiWidget("init", {
+        apiKey: "208b658d-a2d6-424d-a696-914d54432989",
+        assistantId: "4ab5933e-9427-4c0d-8fbe-45ec46287e89",
+      });
+    </script>
+  </body>
+</html>
