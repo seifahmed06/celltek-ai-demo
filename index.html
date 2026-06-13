@@ -17,6 +17,7 @@
         flex-direction: column;
       }
 
+      /* ── HEADER ── */
       header {
         display: flex;
         align-items: center;
@@ -25,144 +26,159 @@
         background: #0d1527;
         border-bottom: 1px solid #1e2d50;
       }
-
       .logo { font-size: 1.6rem; font-weight: 700; color: #fff; letter-spacing: 1px; }
       .logo span { color: #3b82f6; }
-
       .badge {
-        background: #1e3a6e;
-        color: #93c5fd;
-        font-size: 0.75rem;
-        padding: 4px 12px;
-        border-radius: 20px;
-        font-weight: 600;
+        background: #1e3a6e; color: #93c5fd;
+        font-size: 0.75rem; padding: 4px 12px;
+        border-radius: 20px; font-weight: 600;
       }
 
+      /* ── HERO ── */
       .hero {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 60px 20px;
+        flex: 1; display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        text-align: center; padding: 40px 20px;
       }
-
       .hero-tag {
-        font-size: 0.8rem;
-        font-weight: 600;
-        color: #3b82f6;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        margin-bottom: 20px;
+        font-size: 0.8rem; font-weight: 600; color: #3b82f6;
+        letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px;
       }
-
       .hero h1 {
-        font-size: clamp(2rem, 5vw, 3.4rem);
-        font-weight: 700;
-        line-height: 1.25;
-        color: #fff;
-        max-width: 700px;
-        margin-bottom: 20px;
+        font-size: clamp(1.8rem, 4vw, 3rem);
+        font-weight: 700; line-height: 1.25; color: #fff;
+        max-width: 700px; margin-bottom: 14px;
       }
-
       .hero h1 em { font-style: normal; color: #3b82f6; }
-
       .hero p {
-        font-size: 1.05rem;
-        color: #8b9cbd;
-        max-width: 520px;
-        line-height: 1.8;
-        margin-bottom: 48px;
+        font-size: 1rem; color: #8b9cbd;
+        max-width: 520px; line-height: 1.8; margin-bottom: 36px;
       }
 
+      /* ── CARDS ── */
       .cards {
-        display: flex;
-        gap: 16px;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-bottom: 48px;
+        display: flex; gap: 14px; flex-wrap: wrap;
+        justify-content: center; margin-bottom: 36px;
       }
-
       .card {
-        background: #111d35;
-        border: 1px solid #1e2d50;
-        border-radius: 12px;
-        padding: 20px 24px;
-        width: 180px;
-        text-align: center;
-        transition: border-color 0.2s;
+        background: #111d35; border: 1px solid #1e2d50;
+        border-radius: 12px; padding: 18px 20px; width: 160px;
+        text-align: center; transition: border-color 0.2s;
       }
-
       .card:hover { border-color: #3b82f6; }
-      .card-icon { font-size: 1.8rem; margin-bottom: 10px; }
-      .card h3 { font-size: 0.85rem; font-weight: 600; color: #cbd5e1; line-height: 1.4; }
+      .card-icon { font-size: 1.6rem; margin-bottom: 8px; }
+      .card h3 { font-size: 0.82rem; font-weight: 600; color: #cbd5e1; line-height: 1.4; }
 
-      .divider {
-        width: 60px;
-        height: 3px;
-        background: #3b82f6;
-        border-radius: 2px;
-        margin: 0 auto 40px;
+      /* ── MODE TABS ── */
+      .mode-tabs {
+        display: flex; gap: 8px; margin-bottom: 24px;
+        background: #111d35; border: 1px solid #1e2d50;
+        border-radius: 12px; padding: 6px;
       }
-
-      /* Sample question pills — clickable */
-      .samples {
-        margin-top: 28px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-        max-width: 640px;
-      }
-
-      .sample-q {
-        background: #111d35;
-        border: 1px solid #1e2d50;
-        color: #93c5fd;
-        font-size: 0.82rem;
+      .tab-btn {
+        flex: 1; padding: 10px 28px;
+        border: none; border-radius: 8px;
         font-family: 'Cairo', sans-serif;
-        padding: 8px 16px;
-        border-radius: 20px;
-        cursor: pointer;
-        transition: background 0.2s, border-color 0.2s;
+        font-size: 0.95rem; font-weight: 600;
+        cursor: pointer; transition: all 0.2s;
+        background: transparent; color: #8b9cbd;
+        display: flex; align-items: center; justify-content: center; gap: 8px;
+      }
+      .tab-btn.active {
+        background: #3b82f6; color: #fff; box-shadow: 0 2px 12px #3b82f640;
+      }
+      .tab-btn:not(.active):hover { background: #1e2d50; color: #e8eaf0; }
+
+      /* ── WIDGET PANELS ── */
+      .widget-panel { display: none; width: 100%; max-width: 640px; }
+      .widget-panel.active { display: block; }
+
+      /* ── SAMPLE QUESTIONS (chat only) ── */
+      .samples {
+        display: flex; flex-wrap: wrap; gap: 10px;
+        justify-content: center; margin-bottom: 16px;
+      }
+      .sample-q {
+        background: #111d35; border: 1px solid #1e2d50;
+        color: #93c5fd; font-size: 0.82rem;
+        font-family: 'Cairo', sans-serif;
+        padding: 8px 16px; border-radius: 20px;
+        cursor: pointer; transition: background 0.2s, border-color 0.2s;
+      }
+      .sample-q:hover { background: #1e3a6e; border-color: #3b82f6; }
+
+      /* ── VOICE PANEL INFO ── */
+      .voice-info {
+        background: #111d35; border: 1px solid #1e2d50;
+        border-radius: 14px; padding: 28px 32px;
+        text-align: center; margin-bottom: 20px;
+      }
+      .voice-info .mic-icon { font-size: 3rem; margin-bottom: 14px; }
+      .voice-info h3 { font-size: 1.1rem; color: #fff; margin-bottom: 8px; font-weight: 700; }
+      .voice-info p { font-size: 0.88rem; color: #8b9cbd; line-height: 1.7; }
+      .voice-steps {
+        display: flex; justify-content: center; gap: 24px;
+        margin-top: 20px; flex-wrap: wrap;
+      }
+      .step {
+        display: flex; align-items: center; gap: 8px;
+        font-size: 0.82rem; color: #93c5fd;
+      }
+      .step-num {
+        background: #3b82f6; color: #fff;
+        width: 22px; height: 22px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 0.72rem; font-weight: 700; flex-shrink: 0;
       }
 
-      .sample-q:hover {
-        background: #1e3a6e;
-        border-color: #3b82f6;
+      /* ── HINT ── */
+      .hint { margin-top: 10px; font-size: 0.78rem; color: #4b5563; }
+
+      /* ── STATUS BAR ── */
+      .status-bar {
+        display: none; align-items: center; gap: 8px;
+        background: #0d2a0d; border: 1px solid #1a5c1a;
+        border-radius: 8px; padding: 8px 16px;
+        font-size: 0.8rem; color: #4ade80; margin-bottom: 14px;
+      }
+      .status-bar.show { display: flex; }
+      .status-dot {
+        width: 8px; height: 8px; border-radius: 50%;
+        background: #4ade80; animation: pulse 1.5s infinite;
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.3; }
       }
 
-      .hint {
-        margin-top: 12px;
-        font-size: 0.78rem;
-        color: #4b5563;
+      /* ── DIVIDER ── */
+      .divider {
+        width: 60px; height: 3px; background: #3b82f6;
+        border-radius: 2px; margin: 0 auto 32px;
       }
 
       footer {
-        text-align: center;
-        padding: 18px;
-        font-size: 0.75rem;
-        color: #374151;
+        text-align: center; padding: 16px;
+        font-size: 0.75rem; color: #374151;
         border-top: 1px solid #1e2d50;
       }
     </style>
   </head>
   <body>
 
+    <!-- Header -->
     <header>
       <div class="logo">Cell<span>Tek</span></div>
       <span class="badge">🤖 AI Demo – نسخة تجريبية</span>
     </header>
 
+    <!-- Hero -->
     <section class="hero">
       <p class="hero-tag">مركز تجربة العملاء الذكي</p>
       <h1>مرحباً بك في<br /><em>المساعد الذكي</em> لـ CellTek</h1>
-      <p>
-        اسأل عن مواعيد الفروع، التحضير للفحوصات، التأمين الطبي،
-        أو أي استفسار آخر — باللغة العربية أو الإنجليزية.
-      </p>
+      <p>اسأل عن مواعيد الفروع، التحضير للفحوصات، التأمين الطبي — باللغة العربية أو الإنجليزية.</p>
 
+      <!-- Feature Cards -->
       <div class="cards">
         <div class="card"><div class="card-icon">🏥</div><h3>مواعيد الفروع</h3></div>
         <div class="card"><div class="card-icon">🧲</div><h3>التحضير للفحوصات</h3></div>
@@ -172,64 +188,169 @@
 
       <div class="divider"></div>
 
-      <p style="color:#8b9cbd; font-size:0.95rem;">انقر على أي سؤال لإرساله مباشرةً ↓</p>
-
-      <div class="samples">
-        <button class="sample-q" onclick="openWidget('ما هي ساعات العمل؟')">ما هي ساعات العمل؟</button>
-        <button class="sample-q" onclick="openWidget('كيف أستعد للـ MRI؟')">كيف أستعد للـ MRI؟</button>
-        <button class="sample-q" onclick="openWidget('هل تقبلون تأمين AXA؟')">هل تقبلون تأمين AXA؟</button>
-        <button class="sample-q" onclick="openWidget('What are your branch hours?')">What are your branch hours?</button>
-        <button class="sample-q" onclick="openWidget('Do you accept insurance?')">Do you accept insurance?</button>
-        <button class="sample-q" onclick="openWidget('How do I book an appointment?')">How do I book an appointment?</button>
+      <!-- Mode Tabs -->
+      <div class="mode-tabs">
+        <button class="tab-btn active" onclick="switchMode('chat')">
+          💬 محادثة نصية
+        </button>
+        <button class="tab-btn" onclick="switchMode('voice')">
+          🎙️ مكالمة صوتية
+        </button>
       </div>
 
-      <p class="hint">💬 أو انقر على زر الدردشة في أسفل الصفحة لبدء محادثة حرة</p>
+      <!-- ── CHAT PANEL ── -->
+      <div class="widget-panel active" id="panel-chat">
+        <p style="color:#8b9cbd; font-size:0.9rem; margin-bottom:12px;">
+          انقر على سؤال لإرساله مباشرةً، أو افتح الدردشة وابدأ الكتابة ↓
+        </p>
+        <div class="samples">
+          <button class="sample-q" onclick="openChat('ما هي ساعات العمل؟')">ما هي ساعات العمل؟</button>
+          <button class="sample-q" onclick="openChat('كيف أستعد للـ MRI؟')">كيف أستعد للـ MRI؟</button>
+          <button class="sample-q" onclick="openChat('هل تقبلون تأمين AXA؟')">هل تقبلون تأمين AXA؟</button>
+          <button class="sample-q" onclick="openChat('What are your branch hours?')">What are your branch hours?</button>
+          <button class="sample-q" onclick="openChat('Do you accept insurance?')">Do you accept insurance?</button>
+          <button class="sample-q" onclick="openChat('How do I book an appointment?')">How do I book an appointment?</button>
+        </div>
+        <p class="hint">أو انقر على الزر الأزرق في أسفل يمين الصفحة 💬</p>
+      </div>
+
+      <!-- ── VOICE PANEL ── -->
+      <div class="widget-panel" id="panel-voice">
+        <div class="voice-info">
+          <div class="mic-icon">🎙️</div>
+          <h3>المكالمة الصوتية جاهزة</h3>
+          <p>تحدث مباشرةً مع المساعد الذكي بالعربية أو الإنجليزية.<br/>
+          سيطلب منك المتصفح إذن الميكروفون عند بدء المكالمة.</p>
+          <div class="voice-steps">
+            <div class="step"><div class="step-num">1</div> انقر على زر المكالمة</div>
+            <div class="step"><div class="step-num">2</div> اسمح بالميكروفون</div>
+            <div class="step"><div class="step-num">3</div> ابدأ الحديث</div>
+          </div>
+        </div>
+
+        <div class="status-bar" id="call-status">
+          <div class="status-dot"></div>
+          <span>المكالمة جارية — تحدث الآن</span>
+        </div>
+
+        <p class="hint">انقر على الزر الأزرق في أسفل يمين الصفحة 🎙️ لبدء المكالمة</p>
+      </div>
+
     </section>
 
     <footer>
       CellTek AI Demo &nbsp;|&nbsp; Powered by Vapi &nbsp;|&nbsp; للاستفسار: 16789
     </footer>
 
-    <!-- ✅ NEW Vapi Widget (updated CDN) -->
+    <!-- ✅ Vapi Widget Script (Official CDN) -->
     <script
       src="https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js"
       async
-      type="text/javascript">
+      type="text/javascript"
+      id="vapi-script">
     </script>
 
+    <!-- Chat Widget -->
     <vapi-widget
+      id="chat-widget"
       public-key="208b658d-a2d6-424d-a696-914d54432989"
       assistant-id="4ab5933e-9427-4c0d-8fbe-45ec46287e89"
       mode="chat"
       theme="dark"
       position="bottom-right"
       size="full"
+      radius="large"
       base-color="#0d1527"
       accent-color="#3b82f6"
       button-base-color="#3b82f6"
       button-accent-color="#ffffff"
-      main-label="CellTek AI"
+      main-label="CellTek Chat"
       empty-chat-message="مرحباً! كيف أستطيع مساعدتك اليوم؟ / Hello! How can I help you today?"
     ></vapi-widget>
 
+    <!-- Voice Widget (hidden by default) -->
+    <vapi-widget
+      id="voice-widget"
+      public-key="208b658d-a2d6-424d-a696-914d54432989"
+      assistant-id="4ab5933e-9427-4c0d-8fbe-45ec46287e89"
+      mode="voice"
+      theme="dark"
+      position="bottom-right"
+      size="compact"
+      radius="large"
+      base-color="#0d1527"
+      accent-color="#3b82f6"
+      button-base-color="#16a34a"
+      button-accent-color="#ffffff"
+      main-label="CellTek Voice"
+      start-button-text="بدء المكالمة"
+      end-button-text="إنهاء المكالمة"
+      empty-voice-message="انقر لبدء مكالمة صوتية / Click to start a voice call"
+      style="display:none;"
+    ></vapi-widget>
+
     <script>
-      // Opens the widget and sends a pre-filled question
-      function openWidget(question) {
-        const widget = document.querySelector('vapi-widget');
-        if (!widget) {
-          alert('Widget is still loading, please try again in a moment.');
-          return;
+      // ── TAB SWITCHING ──
+      function switchMode(mode) {
+        // Update tab buttons
+        document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+          btn.classList.toggle('active', (mode === 'chat' && i === 0) || (mode === 'voice' && i === 1));
+        });
+
+        // Update content panels
+        document.getElementById('panel-chat').classList.toggle('active', mode === 'chat');
+        document.getElementById('panel-voice').classList.toggle('active', mode === 'voice');
+
+        // Show/hide correct Vapi widget
+        const chatW = document.getElementById('chat-widget');
+        const voiceW = document.getElementById('voice-widget');
+        if (mode === 'chat') {
+          chatW.style.display = '';
+          voiceW.style.display = 'none';
+        } else {
+          chatW.style.display = 'none';
+          voiceW.style.display = '';
         }
-        // Open the widget panel
+      }
+
+      // ── OPEN CHAT WITH PRE-FILLED QUESTION ──
+      function openChat(question) {
+        const widget = document.getElementById('chat-widget');
+        if (!widget) return;
         widget.setAttribute('open', 'true');
-        // Small delay to let widget open before sending
+        // Store question so widget can pick it up once open
+        widget.dataset.pendingMessage = question;
+
         setTimeout(() => {
           widget.dispatchEvent(new CustomEvent('send-message', {
             detail: { message: question },
             bubbles: true
           }));
-        }, 500);
+        }, 600);
       }
+
+      // ── VOICE CALL STATUS ──
+      document.addEventListener('DOMContentLoaded', function () {
+        const voiceW = document.getElementById('voice-widget');
+        const statusBar = document.getElementById('call-status');
+
+        if (voiceW) {
+          voiceW.addEventListener('call-start', function () {
+            statusBar.classList.add('show');
+          });
+          voiceW.addEventListener('call-end', function () {
+            statusBar.classList.remove('show');
+          });
+          voiceW.addEventListener('error', function (e) {
+            const msg = e.detail?.message || '';
+            if (msg.includes('microphone')) {
+              alert('يرجى السماح بالوصول إلى الميكروفون لاستخدام المكالمة الصوتية.\nPlease allow microphone access to use voice calls.');
+            } else if (msg.includes('network')) {
+              alert('خطأ في الاتصال. تحقق من الإنترنت.\nNetwork error. Please check your connection.');
+            }
+          });
+        }
+      });
     </script>
 
   </body>
