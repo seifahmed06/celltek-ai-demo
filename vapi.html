@@ -1,29 +1,257 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
   <head>
-    <title>CellTek AI Assistant Demo</title>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CellTek – المساعد الذكي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        font-family: 'Cairo', sans-serif;
+        background: #0b1120;
+        color: #e8eaf0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* ── HEADER ── */
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 40px;
+        background: #0d1527;
+        border-bottom: 1px solid #1e2d50;
+      }
+
+      .logo {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: 1px;
+      }
+
+      .logo span {
+        color: #3b82f6;
+      }
+
+      .badge {
+        background: #1e3a6e;
+        color: #93c5fd;
+        font-size: 0.75rem;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-weight: 600;
+      }
+
+      /* ── HERO ── */
+      .hero {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      .hero-tag {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #3b82f6;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 5vw, 3.4rem);
+        font-weight: 700;
+        line-height: 1.25;
+        color: #fff;
+        max-width: 700px;
+        margin-bottom: 20px;
+      }
+
+      .hero h1 em {
+        font-style: normal;
+        color: #3b82f6;
+      }
+
+      .hero p {
+        font-size: 1.05rem;
+        color: #8b9cbd;
+        max-width: 520px;
+        line-height: 1.8;
+        margin-bottom: 48px;
+      }
+
+      /* ── FEATURE CARDS ── */
+      .cards {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 48px;
+      }
+
+      .card {
+        background: #111d35;
+        border: 1px solid #1e2d50;
+        border-radius: 12px;
+        padding: 20px 24px;
+        width: 180px;
+        text-align: center;
+        transition: border-color 0.2s;
+      }
+
+      .card:hover { border-color: #3b82f6; }
+
+      .card-icon {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+      }
+
+      .card h3 {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #cbd5e1;
+        line-height: 1.4;
+      }
+
+      /* ── CTA BUTTON ── */
+      .cta-btn {
+        background: #3b82f6;
+        color: #fff;
+        border: none;
+        padding: 14px 36px;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-family: 'Cairo', sans-serif;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.1s;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .cta-btn:hover { background: #2563eb; transform: translateY(-1px); }
+      .cta-btn:active { transform: translateY(0); }
+
+      /* ── DIVIDER ── */
+      .divider {
+        width: 60px;
+        height: 3px;
+        background: #3b82f6;
+        border-radius: 2px;
+        margin: 0 auto 40px;
+      }
+
+      /* ── SAMPLE QUESTIONS ── */
+      .samples {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        max-width: 640px;
+      }
+
+      .sample-q {
+        background: #111d35;
+        border: 1px solid #1e2d50;
+        color: #93c5fd;
+        font-size: 0.82rem;
+        font-family: 'Cairo', sans-serif;
+        padding: 7px 14px;
+        border-radius: 20px;
+        cursor: default;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        text-align: center;
+        padding: 18px;
+        font-size: 0.75rem;
+        color: #374151;
+        border-top: 1px solid #1e2d50;
+      }
+    </style>
   </head>
   <body>
-    <h1>Welcome to CellTek</h1>
-    <p>Click the chat bubble to start a conversation with our AI assistant.</p>
 
-    <!-- Vapi Web Widget Script -->
+    <!-- Header -->
+    <header>
+      <div class="logo">Cell<span>Tek</span></div>
+      <span class="badge">🤖 AI Demo – نسخة تجريبية</span>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <p class="hero-tag">مركز تجربة العملاء الذكي</p>
+      <h1>مرحباً بك في<br /><em>المساعد الذكي</em> لـ CellTek</h1>
+      <p>
+        اسأل عن مواعيد الفروع، التحضير للفحوصات، التأمين الطبي،
+        أو أي استفسار آخر — باللغة العربية أو الإنجليزية.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">🏥</div>
+          <h3>مواعيد الفروع</h3>
+        </div>
+        <div class="card">
+          <div class="card-icon">🧲</div>
+          <h3>التحضير للفحوصات</h3>
+        </div>
+        <div class="card">
+          <div class="card-icon">🛡️</div>
+          <h3>التأمين الطبي</h3>
+        </div>
+        <div class="card">
+          <div class="card-icon">📅</div>
+          <h3>حجز المواعيد</h3>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <button class="cta-btn" onclick="document.querySelector('.cta-btn').innerText='💬 انقر على فقاعة الدردشة ↘'">
+        💬 ابدأ المحادثة الآن
+      </button>
+
+      <div class="samples">
+        <span class="sample-q">ما هي ساعات العمل؟</span>
+        <span class="sample-q">كيف أستعد للـ MRI؟</span>
+        <span class="sample-q">هل تقبلون AXA؟</span>
+        <span class="sample-q">What are your branch hours?</span>
+        <span class="sample-q">Do you accept insurance?</span>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      CellTek AI Demo &nbsp;|&nbsp; Powered by Vapi &nbsp;|&nbsp; للاستفسار: 16789
+    </footer>
+
+    <!-- ── VAPI WIDGET ── -->
     <script>
       (function (w, d, s, o, f, js, fjs) {
         w["VapiWidget"] = o;
-        w[o] =
-          w[o] ||
-          function () {
-            (w[o].q = w[o].q || []).push(arguments);
-          };
-        js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+        w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments); };
+        js = d.createElement(s); fjs = d.getElementsByTagName(s)[0];
         js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
       })(window, document, "script", "vapiWidget", "https://cdn.jsdelivr.net/npm/vapi-web-widget@latest/dist/vapi-widget.js");
+
       vapiWidget("init", {
         apiKey: "208b658d-a2d6-424d-a696-914d54432989",
         assistantId: "4ab5933e-9427-4c0d-8fbe-45ec46287e89",
       });
     </script>
+
   </body>
 </html>
